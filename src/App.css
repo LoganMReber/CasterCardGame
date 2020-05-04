@@ -1,0 +1,181 @@
+.App {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ddd;
+  padding-top: 4rem;
+  padding-bottom: 10rem;
+}
+
+.Card {
+  width: 25rem;
+  height: 25rem;
+  margin: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.Card:hover {
+  box-shadow: 4px 4px 3px #222;
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
+
+.Cards {
+  display: flex;
+  flex-wrap: wrap;
+  width: 60%;
+}
+.card_border {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #222;
+}
+.card_body{
+  
+  width: 230px;
+  height: 230px;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.card_head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  border: 3px solid #222;
+  border-radius: 3px;
+  margin-top: 8px;
+  padding: 3px;
+  font-size: 12px;
+}
+.card_element {
+  width: 16px;
+}
+.card_element.water {
+  background-color: #2224;
+}
+.card_type {
+  width: 90%;
+  border: 3px solid #222;
+  border-radius: 3px;
+  padding: 3px;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+.card_text {
+  width: 90%;
+  height: 108px;
+  border: 3px solid #222;
+  border-radius: 3px;
+  padding: 3px;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.card_stat_block {
+  width: 20%;
+  border: 3px solid #222;
+  border-radius: 3px;
+  padding: 3px;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.card_footer {
+  background-color: #222;
+  color: #eee;
+  width: 93.4%;
+  font-size: 6px;
+  padding: 3px;
+  padding-bottom: 0px;
+  margin-bottom: 2px;
+  display: flex;
+  justify-content: space-between;
+  
+}
+.card_footer p {
+    padding: 0;
+    margin: 0;
+}
+
+.ManaPool {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: space-between;
+  width: 10rem;
+  height: 10rem;
+}
+.ManaPool div {
+  display: flex;
+  width: 47%;
+  height: 47%;
+  color: #eee;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.4rem;
+  border: 2px solid #222;
+  margin: 1px;
+}
+.Red_Mana {
+  background-color: #933;
+}
+.Green_Mana {
+  background-color: #393;
+}
+.Blue_Mana {
+  background-color: #339;
+}
+.Orange_Mana {
+  background-color: #963;
+}
+
+.ManaGain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #2229;
+}
+.ManaGain div div{
+  font-size: 4.8rem;
+  padding: 2rem;
+  width: 10rem;
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow:  2px 2px 4px inset #FFF4;
+  border: 4px solid black;
+  margin: 0.5rem;
+}
+.Gain_Red {
+  background-color: #933;
+}
+.Gain_Green {
+  background-color: #393;
+}
+.Gain_Blue {
+  background-color: #339;
+}
+.Gain_Orange {
+  background-color: #963;
+}
