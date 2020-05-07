@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './App.css';
 import Card from './components/Card';
 import ManaPool from './components/ManaPool';
 import ManaGain from './components/ManaGain';
@@ -11,7 +10,7 @@ function App() {
     <div className="App">
       {showMG ? <ManaGain mana={mana} setMana={setMana} setShowMG={setShowMG}/>:null}
       <div className='Cards'>
-        {cards.map((card)=><Card data={card}/>)}
+        {cards.map((card,id)=><Card key={id} data={card}/>)}
       </div>
       <ManaPool mana={mana}/>
     </div>

@@ -1,31 +1,28 @@
-.App {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #ddd;
-  padding-top: 4rem;
-  padding-bottom: 10rem;
+* {
+  box-sizing: border-box;
+  font-family: 'Domine', serif;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
-
+html {
+  font-size: 62.5%;
+}
+.Cards {
+  display: flex;
+  flex-wrap: wrap;
+  width: 60%;
+}
 .Card {
   width: 25rem;
   height: 25rem;
   margin: 1rem;
   transition: all 0.3s ease-in-out;
 }
-
 .Card:hover {
   box-shadow: 4px 4px 3px #222;
   transform: scale(1.05);
   transition: all 0.3s ease-in-out;
-}
-
-.Cards {
-  display: flex;
-  flex-wrap: wrap;
-  width: 60%;
 }
 .card_border {
   display: flex;
@@ -36,8 +33,7 @@
   height: 100%;
   background-color: #222;
 }
-.card_body{
-  
+.card_body {
   width: 230px;
   height: 230px;
   border-radius: 3px;
@@ -59,9 +55,6 @@
 }
 .card_element {
   width: 16px;
-}
-.card_element.water {
-  background-color: #2224;
 }
 .card_type {
   width: 90%;
@@ -105,13 +98,17 @@
   margin-bottom: 2px;
   display: flex;
   justify-content: space-between;
-  
 }
-.card_footer p {
-    padding: 0;
-    margin: 0;
+.App {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ddd;
+  padding-top: 4rem;
+  padding-bottom: 10rem;
 }
-
 .ManaPool {
   display: flex;
   flex-wrap: wrap;
@@ -143,7 +140,6 @@
 .Orange_Mana {
   background-color: #963;
 }
-
 .ManaGain {
   display: flex;
   justify-content: center;
@@ -155,7 +151,7 @@
   height: 100vh;
   background-color: #2229;
 }
-.ManaGain div div{
+.ManaGain div div {
   font-size: 4.8rem;
   padding: 2rem;
   width: 10rem;
@@ -163,7 +159,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow:  2px 2px 4px inset #FFF4;
+  box-shadow: 2px 2px 4px inset #FFF4;
   border: 4px solid black;
   margin: 0.5rem;
 }
