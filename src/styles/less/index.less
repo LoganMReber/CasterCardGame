@@ -1,92 +1,90 @@
 * {
-    box-sizing: border-box;
-    font-family: 'Domine', serif;
-    margin: 0;
-    padding: 0;
-    border: 0;
+  box-sizing: border-box;
+  font-family: 'Domine', serif;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
-@import "card.less"; 
-
+@import 'card.less';
+@import 'game.less';
 .App {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #ddd;
-    padding-top: 4rem;
-    padding-bottom: 10rem;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ddd;
+  padding-top: 4rem;
+  padding-bottom: 10rem;
 }
-  
-  
+
 .ManaPool {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: space-between;
-    width: 10rem;
-    height: 10rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: space-between;
+  width: 100%;
 }
 .ManaPool div {
-    display: flex;
-    width: 47%;
-    height: 47%;
-    color: #eee;
-    justify-content: center;
-    align-items: center;
-    font-size: 2.4rem;
-    border: 2px solid #222;
-    margin: 1px;
+  display: flex;
+  width: 47%;
+  height: 47%;
+  color: #eee;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.4rem;
+  border: 2px solid #222;
+  margin: 1px;
 }
 .Red_Mana {
-    background-color: #933;
+  background-color: #933;
 }
 .Green_Mana {
-    background-color: #393;
+  background-color: #393;
 }
 .Blue_Mana {
-    background-color: #339;
+  background-color: #339;
 }
 .Orange_Mana {
-    background-color: #963;
+  background-color: #963;
 }
 .ManaGain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #2229;
+
+  div div {
+    font-size: 4.8rem;
+    padding: 2rem;
+    width: 10rem;
+    height: 10rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: #2229;
-
-    div div{
-        font-size: 4.8rem;
-        padding: 2rem;
-        width: 10rem;
-        height: 10rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow:  2px 2px 4px inset #FFF4;
-        border: 4px solid black;
-        margin: 0.5rem;
-    }
+    box-shadow: 2px 2px 4px inset #fff4;
+    border: 4px solid black;
+    margin: 0.5rem;
+  }
 }
 .Gain_Red {
-    background-color: #933;
+  background-color: #933;
 }
 .Gain_Green {
-    background-color: #393;
+  background-color: #393;
 }
 .Gain_Blue {
-    background-color: #339;
+  background-color: #339;
 }
 .Gain_Orange {
-    background-color: #963;
+  background-color: #963;
 }
