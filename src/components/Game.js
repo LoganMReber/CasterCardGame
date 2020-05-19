@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { cards } from '../cardData';
 import ManaPool from './ManaPool';
-const Game = (props) => {
-  const p1Mana = { red: 1, green: 0, blue: 2, orange: 0 };
-  const p2Mana = { red: 0, green: 2, blue: 0, orange: 1 };
+import CardList from './CardList';
+import Card from './Card';
+const Game = ({ players }) => {
+  const colorList = ['red', 'green', 'blue', 'orange'];
+  const [modalActive, toggleModalActive] = useState(false);
+  console.log(players[0].board);
   return (
     <div className='Game'>
       <div className='play_area'>
         <div className='far_board'>
           <div className='creatures'>Creature Zone</div>
           <div className='info'>
-            <ManaPool mana={p2Mana} />
+            <ManaPool mana={players[1]} />
             <div className='health'>♥ 20</div>
           </div>
         </div>
@@ -17,41 +22,46 @@ const Game = (props) => {
         <div className='close_board'>
           <div className='info'>
             <div className='health'>20 ♥</div>
-            <ManaPool mana={p1Mana} />
+            <ManaPool mana={players[0]} />
           </div>
-          <div className='creatures'>Creature Zone</div>
+          <div className='creatures'>
+            {players[0].board.length
+              ? players[0].board.map((card) => (
+                  <Card type='creature' color={card.color} card={card} />
+                ))
+              : null}
+          </div>
         </div>
       </div>
       <div className='cards_menu'>
-        <div className='red'>
-          <img src='./img/beast.png' alt='creature' />
-        </div>
-        <div className='green'>
-          <img src='./img/beast.png' alt='creature' />
-        </div>
-        <div className='blue'>
-          <img src='./img/beast.png' alt='creature' />
-        </div>
-        <div className='orange'>
-          <img src='./img/beast.png' alt='creature' />
-        </div>
-      </div>
-      <div className='cards_menu'>
-        <div className='red'>
-          <img src='./img/spell.png' alt='spell' />
-        </div>
-        <div className='green'>
-          <img src='./img/spell.png' alt='spell' />
-        </div>
-        <div className='blue'>
-          <img src='./img/spell.png' alt='spell' />
-        </div>
-        <div className='orange'>
-          <img src='./img/spell.png' alt='spell' />
-        </div>
+        {colorList.map((color) => (
+          <CardList
+            key={`${color}_creature`}
+            modalActive={modalActive}
+            toggleModalActive={toggleModalActive}
+            color={color}
+            type='creature'
+            cards={cards.creature[color]}
+          />
+        ))}
+        {colorList.map((color) => (
+          <CardList
+            key={`${color}_spell`}
+            modalActive={modalActive}
+            toggleModalActive={toggleModalActive}
+            color={color}
+            type='spell'
+            cards={cards.spell[color]}
+          />
+        ))}
+        />
       </div>
     </div>
   );
 };
-
-export default Game;
+const mapStateToProps = (state) => {
+  return {
+    players: state.players
+  };
+};
+export default connect(mapStateToProps, {})(Game);

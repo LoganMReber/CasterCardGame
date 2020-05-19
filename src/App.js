@@ -1,28 +1,26 @@
-import React, { useState } from 'react';
-import Card from './components/Card';
-// import ManaPool from './components/ManaPool';
-import ManaGain from './components/ManaGain';
-import { cards } from './cardData';
+import React from 'react';
+import { connect } from 'react-redux';
 import Game from './components/Game';
-function App() {
-  const [mana, setMana] = useState({ red: 0, green: 0, blue: 0, orange: 0 });
-  const [showMG, setShowMG] = useState(true);
+import ManaGain from './components/ManaGain';
+
+const App = (props) => {
+  const id = 0;
+  const { player, phase } = props;
+  console.log(player, phase);
   return (
     <div className='App'>
+      {phase === 'MANA' && player === id ? <ManaGain /> : null}
       <Game />
-      {/* {showMG ? (
-        <ManaGain mana={mana} setMana={setMana} setShowMG={setShowMG} />
-      ) : null} */}
-      {/* <div className='Cards'>
-        {cards.map((card, id) => (
-          <Card key={id} data={card} />
-        ))}
-      </div> */}
     </div>
   );
-}
-
-export default App;
+};
+const mapStateToProps = (state) => {
+  return {
+    player: state.player,
+    phase: state.phase
+  };
+};
+export default connect(mapStateToProps, {})(App);
 
 /**
  * Round Start
