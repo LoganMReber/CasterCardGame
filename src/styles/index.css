@@ -21,34 +21,56 @@ html {
   background-color: #963 !important;
 }
 .red_body {
-  background-color: #933 !important;
+  background-color: #cc6666 !important;
 }
 .green_body {
-  background-color: #393 !important;
+  background-color: #66cc66 !important;
 }
 .blue_body {
-  background-color: #339 !important;
+  background-color: #6666cc !important;
 }
 .orange_body {
-  background-color: #963 !important;
+  background-color: #cc9966 !important;
 }
 .ManaPool {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: space-between;
   width: 100%;
 }
 .ManaPool div {
   display: flex;
-  width: 47%;
-  height: 47%;
-  color: #eee;
   justify-content: center;
   align-items: center;
+  width: 25%;
+  height: 6rem;
+  color: #eee;
   font-size: 2.4rem;
-  border: 2px solid #222;
-  margin: 1px;
+  border: 4px solid #222;
+}
+.ManaPool .thp {
+  width: 100%;
+  border-bottom: none;
+  background-color: red;
+}
+.ManaPool .bhp {
+  width: 100%;
+  border-top: none;
+  background-color: red;
+}
+.ManaPool .rm {
+  background-color: red;
+  border-right: none;
+}
+.ManaPool .gm {
+  background-color: green;
+  border-right: none;
+}
+.ManaPool .bm {
+  background-color: blue;
+  border-right: none;
+}
+.ManaPool .om {
+  background-color: orange;
 }
 .ManaGain {
   display: flex;
@@ -69,9 +91,50 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 2px 2px 4px inset #fff4;
   border: 4px solid black;
   margin: 0.5rem;
+  border-radius: 50%;
+}
+.ManaGain .red {
+  background: radial-gradient(circle at 28% 28%, #ffffff 2%, #ff0000 15%, #990000, #000);
+}
+.ManaGain .green {
+  background: radial-gradient(circle at 28% 28%, #b3ffb3 2%, #008000 15%, #001a00, #000);
+}
+.ManaGain .blue {
+  background: radial-gradient(circle at 28% 28%, #ffffff 2%, #0000ff 15%, #000099, #000);
+}
+.ManaGain .orange {
+  background: radial-gradient(circle at 28% 28%, #ffffff 2%, #ffa500 15%, #996300, #000);
+}
+.LoggerButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 4rem;
+  background-color: orange;
+  border: 4px black solid;
+  border-bottom: none;
+}
+.LoggerButton p {
+  text-align: center;
+  font-size: 2.4rem;
+}
+.PhaseButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 4rem;
+  background-color: red;
+  border: 4px black solid;
+  border-top: none;
+  border-bottom: none;
+}
+.PhaseButton p {
+  text-align: center;
+  font-size: 2.4rem;
 }
 .Cards {
   display: flex;
@@ -79,35 +142,31 @@ html {
   width: 60%;
 }
 .Card {
-  width: 25rem;
-  height: 25rem;
-  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   transition: all 0.3s ease-in-out;
+  background-color: #222;
 }
 .Card:hover {
   box-shadow: 4px 4px 3px #222;
   transform: scale(1.05);
   transition: all 0.3s ease-in-out;
 }
-.card_border {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  width: 100%;
-  height: 100%;
+.Card .header {
   background-color: #222;
+  height: 5%;
 }
-.card_body {
-  width: 230px;
-  height: 230px;
+.Card .body {
+  width: 90%;
+  height: 100%;
   border-radius: 3px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
 }
-.card_head {
+.Card .head {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -118,10 +177,13 @@ html {
   padding: 3px;
   font-size: 12px;
 }
-.card_element {
+.Card .head .element {
   width: 16px;
 }
-.card_type {
+.Card .head .name {
+  text-align: center;
+}
+.Card .type {
   width: 90%;
   border: 3px solid #222;
   border-radius: 3px;
@@ -130,9 +192,8 @@ html {
   display: flex;
   justify-content: space-between;
 }
-.card_text {
+.Card .text {
   width: 90%;
-  height: 108px;
   border: 3px solid #222;
   border-radius: 3px;
   padding: 3px;
@@ -142,8 +203,14 @@ html {
   align-items: center;
   text-align: center;
 }
-.card_stat_block {
+.Card .stat_block {
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+}
+.Card .stat_block div {
   width: 20%;
+  height: 100%;
   border: 3px solid #222;
   border-radius: 3px;
   padding: 3px;
@@ -153,69 +220,83 @@ html {
   align-items: center;
   text-align: center;
 }
-.card_footer {
+.Card .footer {
   background-color: #222;
   color: #eee;
-  width: 93.4%;
+  height: 5%;
+  width: 90%;
   font-size: 6px;
-  padding: 3px;
-  padding-bottom: 0px;
-  margin-bottom: 2px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .Game {
   display: flex;
-  align-items: center;
+  justify-content: space-evenly;
+  width: 80%;
+  min-height: 100%;
+  padding: 2rem;
+}
+.Game .stats {
+  display: flex;
   flex-direction: column;
-  width: 95vw;
-  min-height: 95vh;
+  justify-content: space-between;
+  align-items: center;
+  width: 15%;
+  height: 100%;
+}
+.Game .stats .buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+.Game .stats .player_name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 5rem;
+  background-color: grey;
+  font-size: 1.6rem;
+  border-left: 4px solid #111;
+  border-right: 4px solid #111;
+  box-shadow: 2px 2px 4px 4px inset #1111;
+}
+.Game .stats .player_name.top {
+  margin-top: 40px;
+  border-top: 4px solid #111;
+}
+.Game .stats .player_name.bottom {
+  margin-bottom: 40px;
+  border-bottom: 4px solid #111;
 }
 .Game .play_area {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  height: 100%;
+  width: 60%;
 }
-.Game .far_board,
-.Game .close_board {
+.Game .play_area .creatures {
   display: flex;
-  justify-content: space-between;
   width: 100%;
-  height: 30%;
-}
-.Game .creatures {
-  width: 80%;
-  height: 27.7rem;
+  height: 25rem;
   padding: 0.1rem;
   border: 3px black solid;
+  background-color: #0008;
 }
-.Game .effects_stack {
-  width: 80%;
-  height: 30%;
-  padding: 2rem;
-  border: 3px black solid;
-}
-.Game .info {
+.Game .hist_stack {
   display: flex;
   flex-direction: column;
-  width: 15%;
+  width: 10%;
+}
+.Game .hist_stack .effects_stack {
+  width: 100%;
   height: 100%;
-}
-.Game .info div {
-  height: 50%;
-}
-.Game .info .health {
-  color: red;
-  font-size: 4.8rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.Game .info .mana {
-  background-color: blue;
+  padding: 0.1rem;
+  border: 3px black solid;
+  background-color: #0008;
 }
 .modal-area {
   display: flex;
@@ -230,24 +311,28 @@ html {
 }
 .cards_menu {
   display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  align-items: center;
-  width: 95vw;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+.cards_menu div {
+  display: flex;
+  justify-content: center;
 }
 .cards_menu .CardList {
-  width: 20vw;
-  height: 12vw;
-  max-width: 200px;
-  max-height: 120px;
-  min-width: 100px;
-  min-height: 60px;
+  width: 25%;
+  height: 6rem;
   border: 4px black solid;
-  border-radius: 5px;
+  border-right: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0.5rem;
+}
+.cards_menu .CardList img {
+  width: 5rem;
+}
+.cards_menu .CardList:last-child {
+  border-right: 4px black solid;
 }
 .button-symbol {
   width: 10vw;
@@ -261,7 +346,9 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #ddd;
-  padding-top: 4rem;
-  padding-bottom: 10rem;
+  background-image: url('../bg.jpg');
+  background-size: cover;
+  background-position: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
