@@ -2,6 +2,10 @@ export const MANA_PHASE = 'MANA_PHASE';
 export const manaPhase = (player, color) => (dispatch) => {
   dispatch({ type: MANA_PHASE, payload: { player, color } });
 };
+export const END_PHASE = 'END_PHASE';
+export const endPhase = () => (dispatch) => {
+  dispatch({ type: END_PHASE, payload: null });
+};
 
 export const PLAY_CARD_CREATURE = 'PLAY_CARD_CREATURE';
 export const PLAY_CARD_SPELL = 'PLAY_CARD_SPELL';
@@ -15,6 +19,6 @@ export const playCard = (player, card, color, type) => (dispatch) => {
       dispatch({ type: PLAY_CARD_SPELL, payload: { color, current, card } });
     }
   } else {
-    dispatch({ type: PLAY_CARD_FAILURE });
+    dispatch({ type: PLAY_CARD_FAILURE, payload: null });
   }
 };

@@ -4,13 +4,13 @@ import Game from './components/Game';
 import ManaGain from './components/ManaGain';
 
 const App = (props) => {
-  const id = 0;
+  const pid = 0;
   const { player, phase } = props;
   console.log(player, phase);
   return (
     <div className='App'>
-      {phase === 'MANA' && player === id ? <ManaGain /> : null}
-      <Game />
+      {phase === 'MANA' ? <ManaGain /> : null}
+      <Game pid={pid} />
     </div>
   );
 };

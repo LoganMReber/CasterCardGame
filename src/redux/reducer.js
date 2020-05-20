@@ -2,7 +2,8 @@ import {
   MANA_PHASE,
   PLAY_CARD_CREATURE,
   PLAY_CARD_SPELL,
-  PLAY_CARD_FAILURE
+  PLAY_CARD_FAILURE,
+  END_PHASE
 } from './actions';
 const storeShape = {
   round: 0,
@@ -63,6 +64,12 @@ export const reducer = (state = storeShape, action) => {
       newState.players[pl.player].orange_current =
         newState.players[pl.player].orange;
       return newState;
+    case END_PHASE:
+      return {
+        ...state,
+        player: state.player + 1 < state.players.length ? state.player + 1 : 0,
+        phase: 'MANA'
+      };
     case PLAY_CARD_CREATURE:
       console.log(
         state.players[state.player][pl.current],
