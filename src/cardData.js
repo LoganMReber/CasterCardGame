@@ -6,6 +6,14 @@ export const cards = {
         level: 1,
         set_emblem: '♂',
         effect: 'Haste (This creature can attack the turn it is summoned.)',
+        effects: [
+          {
+            type: 'haste',
+            trigger: 'cast',
+            trg_target: { min: 1, max: 1, self: true },
+            eff_target: { min: 1, max: 1, self: true }
+          }
+        ],
         damage: 1,
         health: 1,
         creator: 'Bradley McKane',
@@ -17,6 +25,31 @@ export const cards = {
         set_emblem: '♂',
         effect:
           'This creature can be sacrficed at any time to deal 2 damage to a target.',
+        effects: [
+          {
+            type: 'sacrifice',
+            trigger: 'at-will',
+            trg_target: {
+              min: 1,
+              max: 1,
+              self: true
+            },
+            eff_target: { min: 1, max: 1, self: true }
+          },
+          {
+            type: 'stat',
+            trigger: 'sacrifice',
+            trg_target: { min: 1, max: 1, self: true },
+            eff_target: {
+              min: 1,
+              max: 1,
+              caster: 'enemy',
+              creature: 'enemy',
+              c_flags_ban: ['immune']
+            },
+            payload: { mod_health: -2, duration: 1 }
+          }
+        ],
         damage: 2,
         health: 1,
         creator: 'Bradley McKane',
